@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Global Tech - Advanced Technology Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-deep': '#1E293B',
+                        'charcoal': '#0F172A',
+                        'steel': '#475569',
+                        'electric': '#3B82F6',
+                        'emerald-bright': '#10B981',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'gradient-shift': 'gradientShift 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(-45deg, #1E293B, #0F172A, #475569, #1E293B);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease-in-out infinite;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-pattern {
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+        }
+        
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gradient-to-br from-slate-deep via-charcoal to-slate-deep text-white">
+    <!-- @COMPONENT: NavigationHeader -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-deep/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-poppins font-bold">Nexus Global Tech</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-electric transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-electric transition-colors duration-300">About</a>
+                    <a href="#services" class="hover:text-electric transition-colors duration-300">Services</a>
+                    <a href="#industries" class="hover:text-electric transition-colors duration-300">Industries</a>
+                    <a href="#contact" class="hover:text-electric transition-colors duration-300">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="carousel-container absolute inset-0">
+            <!-- Carousel Slide 1: AI/ML -->
+            <div class="carousel-slide active">
+                <!-- Abstract AI neural network visualization -->
+                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" alt="AI Neural Network" />
+            </div>
+            
+            <!-- Carousel Slide 2: Blockchain -->
+            <div class="carousel-slide">
+                <!-- Blockchain network nodes and connections -->
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" alt="Blockchain Network" />
+            </div>
+            
+            <!-- Carousel Slide 3: IoT -->
+            <div class="carousel-slide">
+                <!-- Connected IoT devices and smart city infrastructure -->
+                <img src="https://pixabay.com/get/g860b75f47256cf585c7b89ba5eb4a832b7d5c321902af205adf77b8a7e6e4d5be051b7b1fc19e65e1409c10a2fe4cd4f899c86f959b399bb13dcd24853e535d7_1280.jpg" alt="IoT Smart City" />
+            </div>
+            
+            <!-- Carousel Slide 4: Quantum Computing -->
+            <div class="carousel-slide">
+                <!-- Quantum computing technology and advanced circuits -->
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" alt="Quantum Computing" />
+            </div>
+        </div>
+        
+        <div class="hero-overlay absolute inset-0"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-poppins font-bold mb-6 animate-fade-in">
+                Global Technology
+                <span class="bg-gradient-to-r from-electric to-emerald-bright bg-clip-text text-transparent">
+                    Innovation Partners
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto animate-slide-up">
+                Empowering enterprises worldwide with cutting-edge AI, Blockchain, IoT solutions, and comprehensive technology infrastructure built for the future.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+                <button class="bg-gradient-to-r from-electric to-emerald-bright hover:from-blue-600 hover:to-emerald-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Schedule Consultation
+                </button>
+                <button class="border-2 border-white/30 hover:border-electric text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white/10">
+                    Explore Our Services
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/60 text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 tech-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-6">
+                    Innovation through 
+                    <span class="bg-gradient-to-r from-electric to-emerald-bright bg-clip-text text-transparent">
+                        Technical Excellence
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We are a newly established global consulting firm powered by seasoned professionals with decades of experience delivering transformative technology solutions across continents.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Global Reach</h3>
+                    <p class="text-gray-300">
+                        International expertise with successful project delivery across North America, Europe, Asia, and emerging markets.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Technical Depth</h3>
+                    <p class="text-gray-300">
+                        Deep specialization in AI/ML, Blockchain, IoT, cybersecurity, and enterprise-grade infrastructure solutions.
+                    </p>
+                </div>
+                
+                <div class="text-center p-8 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Innovation First</h3>
+                    <p class="text-gray-300">
+                        Pioneering approach to emerging technologies with a track record of delivering cutting-edge solutions that drive business transformation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Professional team collaboration in modern office -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Professional Team Meeting" class="rounded-xl shadow-2xl" />
+                </div>
+                <div>
+                    <h3 class="text-3xl font-poppins font-bold mb-6">
+                        Proven Leadership, Fresh Perspective
+                    </h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our founding team brings together senior architects, CTOs, and technology leaders who have successfully scaled enterprise solutions for Fortune 500 companies, government agencies, and high-growth startups.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-electric rounded-full"></div>
+                            <span class="text-gray-300">20+ years average team experience</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-emerald-bright rounded-full"></div>
+                            <span class="text-gray-300">500+ successful project deliveries</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-3 h-3 bg-electric rounded-full"></div>
+                            <span class="text-gray-300">Global enterprise client portfolio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: ServicesSection -->
+    <section id="services" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-6">
+                    Comprehensive Technology
+                    <span class="bg-gradient-to-r from-electric to-emerald-bright bg-clip-text text-transparent">
+                        Solutions
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    From AI-powered automation to blockchain infrastructure, we deliver end-to-end technology solutions that drive innovation and competitive advantage.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI/ML Services -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">AI & Machine Learning</h3>
+                    <p class="text-gray-300 mb-6">
+                        Custom AI models, neural networks, and ML pipelines for predictive analytics, automation, and intelligent decision-making systems.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Computer Vision & NLP Solutions</li>
+                        <li>• Predictive Analytics Platforms</li>
+                        <li>• AI-Powered Automation</li>
+                        <li>• MLOps Infrastructure</li>
+                    </ul>
+                </div>
+                
+                <!-- Blockchain Services -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Blockchain Architecture</h3>
+                    <p class="text-gray-300 mb-6">
+                        Secure, scalable blockchain solutions including smart contracts, DeFi platforms, and enterprise blockchain integration.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Smart Contract Development</li>
+                        <li>• DeFi Protocol Design</li>
+                        <li>• Enterprise Blockchain Integration</li>
+                        <li>• Tokenization Solutions</li>
+                    </ul>
+                </div>
+                
+                <!-- IoT Services -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-wifi text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">IoT & Edge Computing</h3>
+                    <p class="text-gray-300 mb-6">
+                        Connected device ecosystems, sensor networks, and edge computing solutions for real-time data processing and automation.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Smart Device Development</li>
+                        <li>• Sensor Network Design</li>
+                        <li>• Edge Computing Architecture</li>
+                        <li>• IoT Security Implementation</li>
+                    </ul>
+                </div>
+                
+                <!-- Software Development -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Custom Software Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Full-stack applications, enterprise software, mobile solutions, and firmware development tailored to your specific requirements.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Enterprise Web Applications</li>
+                        <li>• Mobile App Development</li>
+                        <li>• API & Microservices</li>
+                        <li>• Firmware & Embedded Systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Infrastructure Services -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Infrastructure & Cloud</h3>
+                    <p class="text-gray-300 mb-6">
+                        Scalable cloud architectures, DevOps automation, and network infrastructure designed for high availability and performance.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Cloud-Native Architecture</li>
+                        <li>• DevOps & CI/CD Pipelines</li>
+                        <li>• Network Infrastructure</li>
+                        <li>• Disaster Recovery Solutions</li>
+                    </ul>
+                </div>
+                
+                <!-- Cybersecurity Services -->
+                <div class="service-card p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Cybersecurity & Compliance</h3>
+                    <p class="text-gray-300 mb-6">
+                        Comprehensive security frameworks, threat detection systems, and compliance solutions to protect your digital assets.
+                    </p>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>• Security Architecture Design</li>
+                        <li>• Threat Detection & Response</li>
+                        <li>• Compliance & Audit Support</li>
+                        <li>• Zero Trust Implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- @COMPONENT: IndustriesSection -->
+    <section id="industries" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 tech-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-6">
+                    Industries We
+                    <span class="bg-gradient-to-r from-electric to-emerald-bright bg-clip-text text-transparent">
+                        Transform
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Our expertise spans across multiple sectors, delivering tailored solutions that address unique industry challenges and drive digital transformation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-university text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Financial Services</h3>
+                    <p class="text-sm text-gray-400">Digital banking, blockchain payments, risk management</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Healthcare</h3>
+                    <p class="text-sm text-gray-400">Telemedicine, medical AI, patient data security</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-city text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Smart Cities</h3>
+                    <p class="text-sm text-gray-400">Urban IoT, traffic optimization, smart infrastructure</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-industry text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Manufacturing</h3>
+                    <p class="text-sm text-gray-400">Industry 4.0, predictive maintenance, automation</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-bolt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Energy & Utilities</h3>
+                    <p class="text-sm text-gray-400">Smart grids, renewable energy, demand forecasting</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-shipping-fast text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Supply Chain</h3>
+                    <p class="text-sm text-gray-400">Logistics optimization, blockchain tracking, AI forecasting</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Defense & Security</h3>
+                    <p class="text-sm text-gray-400">Secure communications, threat intelligence, cyber defense</p>
+                </div>
+                
+                <div class="group p-6 service-card rounded-xl hover:transform hover:scale-105 transition-all duration-300 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-electric to-emerald-bright rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Education</h3>
+                    <p class="text-sm text-gray-400">E-learning platforms, AI tutoring, campus IoT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: IndustriesSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-6">
+                    Ready to Transform Your
+                    <span class="bg-gradient-to-r from-electric to-emerald-bright bg-clip-text text-transparent">
+                        Technology Vision?
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Connect with our experts to discuss your project requirements and discover how we can accelerate your digital transformation journey.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="service-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+                    <form class="space-y-6" data-mock="true">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">First Name</label>
+                                <input type="text" class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" placeholder="John" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Last Name</label>
+                                <input type="text" class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" placeholder="Doe" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" placeholder="john@company.com" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Company</label>
+                            <input type="text" class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" placeholder="Your Company" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Project Type</label>
+                            <select class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" data-mock="true">
+                                <option>Select a service</option>
+                                <option>AI & Machine Learning</option>
+                                <option>Blockchain Development</option>
+                                <option>IoT Solutions</option>
+                                <option>Custom Software</option>
+                                <option>Infrastructure & Cloud</option>
+                                <option>Cybersecurity</option>
+                                <option>Multiple Services</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full bg-slate-700/50 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-electric focus:ring-2 focus:ring-electric/20 transition-all" placeholder="Tell us about your project requirements..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-electric rounded focus:ring-electric focus:ring-offset-0 bg-slate-700 border-white/20" data-mock="true">
+                                <span class="text-sm text-gray-300">I agree to the <a href="#" class="text-electric hover:underline">Privacy Policy</a> and <a href="#" class="text-electric hover:underline">Terms of Service</a></span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-electric to-emerald-bright hover:from-blue-600 hover:to-emerald-600 text-white py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" data-event="click:handleSubmit" data-implementation="Should validate form before submission">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="service-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-300" data-mock="true">contact@nexusglobaltech.com</p>
+                                    <p class="text-gray-300 text-sm" data-mock="true">partnerships@nexusglobaltech.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-300" data-mock="true">+1 (555) 123-4567</p>
+                                    <p class="text-gray-300 text-sm" data-mock="true">Global Support: +44 20 1234 5678</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-linkedin text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">LinkedIn</h4>
+                                    <p class="text-gray-300" data-mock="true">linkedin.com/company/nexus-global-tech</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedule Meeting -->
+                    <div class="service-card p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-4">Schedule a Consultation</h3>
+                        <p class="text-gray-300 mb-6">Book a free 30-minute consultation with our technology experts to discuss your project requirements.</p>
+                        <button class="w-full bg-gradient-to-r from-electric to-emerald-bright hover:from-blue-600 hover:to-emerald-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" data-implementation="Should integrate with calendly or similar scheduling service">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book Consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-charcoal py-12 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center">
+                            <i class="fas fa-network-wired text-white text-sm"></i>
+                        </div>
+                        <span class="text-lg font-poppins font-bold">Nexus Global Tech</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Empowering global enterprises with cutting-edge technology solutions and expert consulting services.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-electric transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Blockchain Development</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">IoT Solutions</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Custom Software</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Infrastructure & Cloud</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Industries</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-electric transition-colors">Financial Services</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Healthcare</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Smart Cities</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Manufacturing</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Energy & Utilities</a></li>
+                        <li><a href="#" class="hover:text-electric transition-colors">Defense & Security</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center hover:transform hover:scale-110 transition-all">
+                            <i class="fab fa-linkedin text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center hover:transform hover:scale-110 transition-all">
+                            <i class="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-electric to-emerald-bright rounded-lg flex items-center justify-center hover:transform hover:scale-110 transition-all">
+                            <i class="fab fa-github text-white text-sm"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm" data-mock="true">
+                        contact@nexusglobaltech.com<br>
+                        +1 (555) 123-4567
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Nexus Global Tech. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-electric transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-electric transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-electric transition-colors">GDPR Compliance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Carousel functionality
+        (function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Auto-advance carousel every 5 seconds
+            setInterval(nextSlide, 5000);
+            
+            // Initialize first slide
+            showSlide(0);
+        })();
+        
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+        
+        // Form submission handler (placeholder)
+        (function() {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    console.log('Form submitted - implement business logic here');
+                });
+            }
+        })();
+        
+        // Intersection Observer for animations
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.service-card, .animate-slide-up').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
