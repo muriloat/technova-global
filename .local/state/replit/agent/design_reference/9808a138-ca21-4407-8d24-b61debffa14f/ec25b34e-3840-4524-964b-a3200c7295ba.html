@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVanguard Global - Advanced Technology Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'navy': {
+                            900: '#0F172A',
+                            800: '#1E293B',
+                            700: '#334155',
+                            600: '#475569',
+                        },
+                        'electric': {
+                            500: '#3B82F6',
+                            400: '#60A5FA',
+                            300: '#93C5FD',
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px #3B82F6' },
+                            '100%': { boxShadow: '0 0 30px #60A5FA, 0 0 40px #3B82F6' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .circuit-pattern {
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #3B82F6, #60A5FA);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-inter bg-navy-900 text-white antialiased">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [responsive, sticky header with logo and menu] -->
+    <nav class="fixed w-full z-50 bg-navy-900/95 backdrop-blur-md border-b border-navy-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold gradient-text">TechVanguard</div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2">About</a>
+                        <a href="#services" class="nav-link text-gray-300 hover:text-white px-3 py-2">Services</a>
+                        <a href="#industries" class="nav-link text-gray-300 hover:text-white px-3 py-2">Industries</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button data-event="click:toggleMobileMenu" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: Hero [main landing section with CTA] -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden circuit-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 opacity-90"></div>
+        
+        <!-- Floating tech elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 border border-electric-500/20 rounded-full animate-float"></div>
+        <div class="absolute bottom-32 right-16 w-24 h-24 border border-electric-400/30 rounded-lg rotate-45 animate-float" style="animation-delay: -2s;"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-slide-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">Next-Generation</span><br>
+                    Technology Consulting
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Transforming global enterprises through cutting-edge AI, Blockchain, IoT, and infrastructure solutions. 
+                    Delivered by world-class experts with proven international success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button data-event="click:scrollToContact" class="bg-gradient-to-r from-electric-500 to-electric-400 hover:from-electric-600 hover:to-electric-500 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-electric-500/25 transition-all duration-300 animate-glow">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Your Transformation
+                    </button>
+                    <button data-event="click:scrollToServices" class="border-2 border-electric-500 text-electric-400 hover:bg-electric-500 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300">
+                        <i class="fas fa-cog mr-2"></i>
+                        Explore Our Services
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology focus areas preview -->
+        <div class="absolute bottom-8 left-0 right-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-navy-800/50 backdrop-blur-sm p-4 rounded-lg border border-navy-700/50">
+                        <i class="fas fa-brain text-electric-400 text-2xl mb-2"></i>
+                        <div class="text-sm font-medium">Artificial Intelligence</div>
+                    </div>
+                    <div class="bg-navy-800/50 backdrop-blur-sm p-4 rounded-lg border border-navy-700/50">
+                        <i class="fas fa-link text-electric-400 text-2xl mb-2"></i>
+                        <div class="text-sm font-medium">Blockchain</div>
+                    </div>
+                    <div class="bg-navy-800/50 backdrop-blur-sm p-4 rounded-lg border border-navy-700/50">
+                        <i class="fas fa-network-wired text-electric-400 text-2xl mb-2"></i>
+                        <div class="text-sm font-medium">IoT Solutions</div>
+                    </div>
+                    <div class="bg-navy-800/50 backdrop-blur-sm p-4 rounded-lg border border-navy-700/50">
+                        <i class="fas fa-cloud text-electric-400 text-2xl mb-2"></i>
+                        <div class="text-sm font-medium">Cloud Architecture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: About [company overview and team credentials] -->
+    <section id="about" class="py-20 bg-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">About TechVanguard</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A newly established global consulting powerhouse built by seasoned technology leaders 
+                    with decades of experience delivering transformative solutions worldwide.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <!-- Professional team meeting in modern office -->
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Professional team meeting in modern office" 
+                         class="rounded-2xl shadow-2xl w-full h-auto" 
+                         data-mock-image="true"/>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-white">Our Vision</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        To be the premier global technology consulting firm that bridges the gap between 
+                        cutting-edge innovation and practical business transformation. We believe in 
+                        delivering solutions that don't just meet today's challenges but anticipate tomorrow's opportunities.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-globe text-electric-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Global Reach</h4>
+                                <p class="text-gray-400">Proven track record across continents</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-award text-electric-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Excellence Driven</h4>
+                                <p class="text-gray-400">Uncompromising commitment to quality</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-lightbulb text-electric-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Innovation First</h4>
+                                <p class="text-gray-400">Leading-edge solutions for complex challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Expertise -->
+            <div class="bg-navy-700/50 rounded-2xl p-8 border border-navy-600/50">
+                <h3 class="text-3xl font-bold text-center mb-8 gradient-text">Our Founding Team</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-electric-500 to-electric-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Technical Leadership</h4>
+                        <p class="text-gray-300">Combined 50+ years in enterprise architecture, AI/ML, and distributed systems</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-electric-500 to-electric-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-handshake text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Business Strategy</h4>
+                        <p class="text-gray-300">International consulting experience across Fortune 500 companies and startups</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-electric-500 to-electric-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2">Innovation</h4>
+                        <p class="text-gray-300">Pioneered breakthrough solutions in blockchain, IoT, and cybersecurity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About -->
+
+    <!-- Services Section -->
+    <!-- @COMPONENT: Services [detailed service offerings with interactive cards] -->
+    <section id="services" class="py-20 bg-navy-900 circuit-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Our Services</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Comprehensive technology solutions designed to accelerate your digital transformation 
+                    and drive sustainable competitive advantage.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- AI/ML Consulting -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">AI & Machine Learning</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Custom AI solutions, predictive analytics, natural language processing, 
+                        computer vision, and model deployment at enterprise scale.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Custom model development & training
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            MLOps pipeline implementation
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            AI strategy & roadmap consulting
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Blockchain Solutions</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Enterprise blockchain architecture, smart contracts, DeFi protocols, 
+                        NFT platforms, and distributed ledger integration.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Smart contract development
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Blockchain integration services
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Tokenization & DeFi solutions
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT Solutions -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">IoT & Edge Computing</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        End-to-end IoT solutions, sensor networks, edge computing, 
+                        real-time analytics, and industrial automation systems.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Custom IoT device development
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Edge computing optimization
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Industrial IoT integration
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Development -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Custom Development</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Full-stack software development, mobile applications, 
+                        firmware development, and bespoke hardware solutions.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Enterprise software development
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Mobile & web applications
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Hardware & firmware solutions
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">IT Infrastructure</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Network architecture, telecommunications, data center design, 
+                        and enterprise infrastructure optimization.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Network design & optimization
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Data center architecture
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Telecom infrastructure
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="service-card bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50 hover:border-electric-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-electric-500 to-electric-400 rounded-xl mb-6 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Cybersecurity</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Advanced threat detection, zero-trust architecture, 
+                        security audits, and compliance frameworks.
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Security assessment & auditing
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Zero-trust implementation
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-check-circle text-electric-400 mr-2"></i>
+                            Compliance & governance
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-electric-500/20 to-electric-400/20 backdrop-blur-sm p-8 rounded-2xl border border-electric-500/30">
+                    <h3 class="text-2xl font-bold mb-4 text-white">Ready to Transform Your Business?</h3>
+                    <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        Let's discuss how our expertise can accelerate your digital transformation 
+                        and drive sustainable competitive advantage.
+                    </p>
+                    <button data-event="click:scrollToContact" class="bg-gradient-to-r from-electric-500 to-electric-400 hover:from-electric-600 hover:to-electric-500 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-electric-500/25 transition-all duration-300">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services -->
+
+    <!-- Industries Section -->
+    <!-- @COMPONENT: Industries [target industry verticals] -->
+    <section id="industries" class="py-20 bg-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Industries We Serve</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Our solutions span across diverse industry verticals, delivering tailored 
+                    technology strategies that address sector-specific challenges and opportunities.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-university text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Financial Services</h3>
+                    <p class="text-gray-400 text-sm">Digital banking, fintech, blockchain payments, regulatory compliance</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-heartbeat text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Healthcare</h3>
+                    <p class="text-gray-400 text-sm">Telemedicine, AI diagnostics, IoT monitoring, data security</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-industry text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Manufacturing</h3>
+                    <p class="text-gray-400 text-sm">Industry 4.0, predictive maintenance, supply chain optimization</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-city text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Smart Cities</h3>
+                    <p class="text-gray-400 text-sm">Urban planning, traffic management, energy optimization</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-shopping-cart text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Retail & E-commerce</h3>
+                    <p class="text-gray-400 text-sm">Personalization, inventory management, omnichannel experiences</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-bolt text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Energy & Utilities</h3>
+                    <p class="text-gray-400 text-sm">Smart grids, renewable integration, predictive analytics</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-shield-alt text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Defense & Security</h3>
+                    <p class="text-gray-400 text-sm">Cybersecurity, tactical communications, AI surveillance</p>
+                </div>
+                <div class="bg-navy-700/50 p-6 rounded-xl border border-navy-600/50 hover:border-electric-500/50 transition-all duration-300 text-center">
+                    <i class="fas fa-graduation-cap text-electric-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Education</h3>
+                    <p class="text-gray-400 text-sm">EdTech platforms, AI tutoring, digital transformation</p>
+                </div>
+            </div>
+
+            <!-- Case Studies Placeholder -->
+            <div class="bg-navy-700/30 rounded-2xl p-8 border border-navy-600/50">
+                <h3 class="text-3xl font-bold text-center mb-8 gradient-text">Success Stories</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-electric-400 mb-2">150+</div>
+                        <div class="text-gray-300">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-electric-400 mb-2">25+</div>
+                        <div class="text-gray-300">Countries Served</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-electric-400 mb-2">98%</div>
+                        <div class="text-gray-300">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <p class="text-gray-400 italic">
+                        <!-- Placeholder for future case studies and testimonials -->
+                        "Case studies and client testimonials will be featured here as we build our portfolio."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Industries -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: Contact [professional contact form with file upload] -->
+    <section id="contact" class="py-20 bg-navy-900 circuit-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Get In Touch</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to transform your business with cutting-edge technology? 
+                    Let's discuss your project and explore how we can drive your success.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-electric-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Email</div>
+                                    <div class="text-gray-300" data-mock="true">hello@techvanguard.com</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-electric-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">Phone</div>
+                                    <div class="text-gray-300" data-mock="true">+1 (555) 123-4567</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-electric-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-electric-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white">LinkedIn</div>
+                                    <div class="text-gray-300" data-mock="true">linkedin.com/company/techvanguard</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office image placeholder -->
+                    <div class="bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50">
+                        <!-- Modern office workspace with technology -->
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                             alt="Modern office workspace with technology" 
+                             class="rounded-xl w-full h-auto" 
+                             data-mock-image="true"/>
+                        <div class="mt-4 text-center">
+                            <div class="font-semibold text-white">Global Presence</div>
+                            <div class="text-gray-300 text-sm">Ready to serve clients worldwide</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-navy-800/80 backdrop-blur-sm p-8 rounded-2xl border border-navy-700/50">
+                    <form data-event="submit:handleContactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                       class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300"
+                                       placeholder="John" data-mock="true">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                       class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300"
+                                       placeholder="Doe" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300"
+                                   placeholder="john.doe@company.com" data-mock="true">
+                        </div>
+
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company</label>
+                            <input type="text" id="company" name="company"
+                                   class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300"
+                                   placeholder="Your Company Name" data-mock="true">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interest</label>
+                            <select id="service" name="service"
+                                    class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300">
+                                <option value="">Select a service</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="blockchain">Blockchain Solutions</option>
+                                <option value="iot">IoT & Edge Computing</option>
+                                <option value="custom-dev">Custom Development</option>
+                                <option value="infrastructure">IT Infrastructure</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="consulting">General Consulting</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-electric-500 focus:border-transparent transition-all duration-300 resize-none"
+                                      placeholder="Please describe your project requirements, timeline, and any specific challenges you're facing..." data-mock="true"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="fileUpload" class="block text-sm font-medium text-gray-300 mb-2">Attach File (Optional)</label>
+                            <div class="relative">
+                                <input type="file" id="fileUpload" name="fileUpload" class="hidden"
+                                       accept=".pdf,.doc,.docx,.txt" data-implementation="File upload component needed">
+                                <button type="button" data-event="click:triggerFileUpload"
+                                        class="w-full px-4 py-3 bg-navy-700/50 border border-navy-600/50 rounded-lg text-gray-400 hover:border-electric-500/50 transition-all duration-300 flex items-center justify-center space-x-2">
+                                    <i class="fas fa-upload"></i>
+                                    <span>Upload NDA, RFP, or Project Brief</span>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Supported formats: PDF, DOC, DOCX, TXT (Max 10MB)</p>
+                        </div>
+
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                   class="w-4 h-4 text-electric-500 bg-navy-700 border-navy-600 rounded focus:ring-electric-500">
+                            <label for="privacy" class="text-sm text-gray-300">
+                                I agree to the <a href="#" class="text-electric-400 hover:text-electric-300">Privacy Policy</a> and <a href="#" class="text-electric-400 hover:text-electric-300">Terms of Service</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" data-implementation="Form validation and submission logic needed"
+                                class="w-full bg-gradient-to-r from-electric-500 to-electric-400 hover:from-electric-600 hover:to-electric-500 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-electric-500/25 transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [navigation links, social media, legal] -->
+    <footer class="bg-navy-800 border-t border-navy-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="text-2xl font-bold gradient-text">TechVanguard</div>
+                    <p class="text-gray-400 text-sm">
+                        Global technology consulting firm specializing in AI, Blockchain, IoT, 
+                        and enterprise solutions for the digital age.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="#industries" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Industries</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-white">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">AI & Machine Learning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Blockchain Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">IoT & Edge Computing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Custom Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Infrastructure</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-white">Contact</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <div data-mock="true">hello@techvanguard.com</div>
+                        <div data-mock="true">+1 (555) 123-4567</div>
+                        <div>Global Operations</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-navy-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-400">
+                    © 2024 TechVanguard Global. All rights reserved.
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-electric-400 transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // File upload trigger
+            const fileUploadTrigger = document.querySelector('[data-event="click:triggerFileUpload"]');
+            const fileUploadInput = document.getElementById('fileUpload');
+            
+            if (fileUploadTrigger && fileUploadInput) {
+                fileUploadTrigger.addEventListener('click', function() {
+                    fileUploadInput.click();
+                });
+                
+                fileUploadInput.addEventListener('change', function() {
+                    const fileName = this.files[0]?.name || 'Upload NDA, RFP, or Project Brief';
+                    fileUploadTrigger.innerHTML = `
+                        <i class="fas fa-check-circle text-electric-400"></i>
+                        <span>${fileName}</span>
+                    `;
+                });
+            }
+
+            // Form submission handling
+            const contactForm = document.querySelector('[data-event="submit:handleContactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle
+                    console.log('Mobile menu toggle clicked');
+                });
+            }
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0s';
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe service cards for scroll animations
+            document.querySelectorAll('.service-card').forEach(card => {
+                observer.observe(card);
+            });
+        })();
+    </script>
+</body>
+</html>
