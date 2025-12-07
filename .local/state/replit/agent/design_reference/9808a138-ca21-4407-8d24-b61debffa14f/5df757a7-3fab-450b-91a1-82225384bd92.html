@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVantage Consulting - Global Technology Innovation Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-teal': '#0F4C75',
+                        'navy-dark': '#0F172A',
+                        'metallic': '#64748B',
+                        'metallic-light': '#94A3B8'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-deep-teal to-blue-600 bg-clip-text text-transparent">
+                        TechVantage
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-700 hover:text-deep-teal transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-slate-700 hover:text-deep-teal transition-colors font-medium">About</a>
+                    <a href="#services" class="text-slate-700 hover:text-deep-teal transition-colors font-medium">Services</a>
+                    <a href="#industries" class="text-slate-700 hover:text-deep-teal transition-colors font-medium">Industries</a>
+                    <a href="#contact" class="text-slate-700 hover:text-deep-teal transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-slate-700 hover:text-deep-teal">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="relative h-screen overflow-hidden">
+        <div class="carousel-container relative h-full">
+            <!-- Carousel Slide 1 -->
+            <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+                <!-- Global technology consulting scene -->
+                <div class="absolute inset-0 bg-gradient-to-br from-deep-teal/90 to-navy-dark/95" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;"></div>
+            </div>
+            
+            <!-- Carousel Slide 2 -->
+            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                <!-- Artificial intelligence neural network visualization -->
+                <div class="absolute inset-0 bg-gradient-to-br from-deep-teal/90 to-navy-dark/95" style="background-image: url('https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;"></div>
+            </div>
+            
+            <!-- Carousel Slide 3 -->
+            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                <!-- Blockchain network nodes and connections -->
+                <div class="absolute inset-0 bg-gradient-to-br from-deep-teal/90 to-navy-dark/95" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;"></div>
+            </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="max-w-4xl mx-auto text-center px-4">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Global Technology
+                    <span class="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                        Innovation Partners
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Delivering cutting-edge AI, Blockchain, IoT, and infrastructure solutions to transform your business on a global scale
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Schedule Consultation
+                    </button>
+                    <button class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                        Explore Services
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-colors active" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-colors" data-slide="1"></button>
+            <button class="carousel-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-colors" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-8">
+                        Innovation Through
+                        <span class="block bg-gradient-to-r from-deep-teal to-blue-600 bg-clip-text text-transparent">
+                            Technical Excellence
+                        </span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        TechVantage Consulting brings together seasoned professionals with decades of experience in delivering complex, high-impact technology solutions across global markets.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Our team combines deep technical expertise with strategic business acumen to help organizations navigate the rapidly evolving landscape of AI, Blockchain, IoT, and emerging technologies.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-deep-teal mb-2">50+</div>
+                            <div class="text-slate-600">Global Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-deep-teal mb-2">15+</div>
+                            <div class="text-slate-600">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Professional team meeting in modern conference room -->
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Professional team meeting" class="rounded-2xl shadow-2xl w-full h-auto">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-deep-teal/20 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                    Comprehensive Technology
+                    <span class="block bg-gradient-to-r from-deep-teal to-blue-600 bg-clip-text text-transparent">
+                        Solutions
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    From conceptualization to deployment, we deliver end-to-end technology solutions that drive business transformation
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI/ML Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">AI & Machine Learning</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Custom AI models, neural networks, and intelligent automation solutions to enhance decision-making and operational efficiency.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Predictive Analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Natural Language Processing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Computer Vision</li>
+                    </ul>
+                </div>
+
+                <!-- Blockchain Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Blockchain Solutions</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Secure, transparent, and decentralized systems including smart contracts, DeFi solutions, and enterprise blockchain integration.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Smart Contracts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> DeFi Platforms</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Enterprise Integration</li>
+                    </ul>
+                </div>
+
+                <!-- IoT Service -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wifi text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">IoT & Edge Computing</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Connected device ecosystems, sensor networks, and edge computing solutions for real-time data processing and analysis.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Smart Sensors</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Edge Analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Industrial IoT</li>
+                    </ul>
+                </div>
+
+                <!-- Custom Development -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Custom Development</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Full-stack software development, mobile applications, and firmware solutions tailored to your specific business requirements.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Web Applications</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Mobile Development</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> API Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Infrastructure & Cloud</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Scalable cloud architecture, network infrastructure, and enterprise-grade security solutions for modern businesses.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Cloud Migration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> DevOps & CI/CD</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Security Architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cybersecurity</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Comprehensive security assessments, threat monitoring, and defense strategies to protect your digital assets and operations.
+                    </p>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Penetration Testing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Threat Intelligence</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Compliance Audits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">
+                    Industries We
+                    <span class="bg-gradient-to-r from-deep-teal to-blue-600 bg-clip-text text-transparent">
+                        Transform
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Our expertise spans across diverse industries, delivering tailored solutions that address sector-specific challenges
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-university text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Financial Services</h3>
+                    <p class="text-slate-600 text-sm">Digital banking, fintech solutions, and regulatory compliance</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-heartbeat text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Healthcare</h3>
+                    <p class="text-slate-600 text-sm">Medical devices, telemedicine, and healthcare analytics</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Manufacturing</h3>
+                    <p class="text-slate-600 text-sm">Smart factories, industrial automation, and supply chain optimization</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-city text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Smart Cities</h3>
+                    <p class="text-slate-600 text-sm">Urban infrastructure, traffic management, and citizen services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-deep-teal to-navy-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">
+                        Ready to Transform
+                        <span class="block text-blue-300">Your Business?</span>
+                    </h2>
+                    <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                        Get in touch with our experts to discuss how we can help you navigate the future of technology and drive sustainable growth.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Email</div>
+                                <div class="text-white/80">contact@techvantage.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Phone</div>
+                                <div class="text-white/80">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin text-blue-300 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">LinkedIn</div>
+                                <div class="text-white/80">linkedin.com/company/techvantage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-300" placeholder="Your Name" />
+                            </div>
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-300" placeholder="your@email.com" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Company</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-300" placeholder="Company Name" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-blue-300 focus:ring-1 focus:ring-blue-300 resize-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-semibold mb-2">File Upload (Optional)</label>
+                            <input type="file" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700" />
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-4">
+                        TechVantage
+                    </div>
+                    <p class="text-slate-400 mb-6 max-w-md">
+                        Empowering businesses worldwide with cutting-edge technology solutions that drive innovation and sustainable growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blockchain Solutions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">IoT & Edge Computing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Custom Development</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
+                <p>&copy; 2024 TechVantage Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Carousel Functionality
+        (function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.style.opacity = '0';
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active', 'bg-white');
+                    dot.classList.add('bg-white/50');
+                });
+                
+                // Show current slide
+                slides[index].style.opacity = '1';
+                
+                // Activate current dot
+                dots[index].classList.add('active', 'bg-white');
+                dots[index].classList.remove('bg-white/50');
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Auto-advance carousel every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Initialize first slide
+            showSlide(0);
+        })();
+
+        // Smooth scrolling for navigation links
+        (function() {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // Form submission handler
+        (function() {
+            const contactForm = document.querySelector('#contact form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic, API calls, and validation
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
