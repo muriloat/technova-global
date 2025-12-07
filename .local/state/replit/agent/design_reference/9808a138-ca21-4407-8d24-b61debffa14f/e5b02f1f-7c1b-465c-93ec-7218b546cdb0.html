@@ -1,0 +1,690 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaTech Global - Advanced Technology Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'nokia-teal': '#134E4A',
+                        'nokia-navy': '#0F172A',
+                        'metallic-grey': '#64748B',
+                        'dark-metallic': '#475569',
+                    },
+                    backgroundImage: {
+                        'nokia-gradient': 'linear-gradient(135deg, #134E4A 0%, #0F172A 100%)',
+                        'premium-gradient': 'linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #134e4a 100%)',
+                        'service-gradient': 'linear-gradient(135deg, rgba(19, 78, 74, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .carousel-item {
+            transition: opacity 1.5s ease-in-out;
+        }
+        .carousel-item.active {
+            opacity: 1;
+        }
+        .carousel-item:not(.active) {
+            opacity: 0;
+        }
+        .tech-pattern {
+            background-image: 
+                radial-gradient(circle at 20px 20px, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 60px 60px, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px, 80px 80px;
+        }
+        .service-card:hover .service-overlay {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(16, 185, 129, 0.9) 100%);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 50%;
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-nokia-gradient rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-nokia-navy">NexaTech Global</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active text-nokia-navy hover:text-blue-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-nokia-navy hover:text-blue-600 font-medium">About</a>
+                    <a href="#services" class="nav-link text-nokia-navy hover:text-blue-600 font-medium">Services</a>
+                    <a href="#industries" class="nav-link text-nokia-navy hover:text-blue-600 font-medium">Industries</a>
+                    <a href="#contact" class="nav-link text-nokia-navy hover:text-blue-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-nokia-navy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Carousel Backgrounds -->
+        <!-- Abstract AI neural network visualization with glowing nodes -->
+        <div class="carousel-item active absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-premium-gradient opacity-90"></div>
+        </div>
+        <!-- Blockchain network nodes with connecting lines -->
+        <div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-premium-gradient opacity-90"></div>
+        </div>
+        <!-- IoT devices and connected sensors in a modern environment -->
+        <div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-premium-gradient opacity-90"></div>
+        </div>
+        <!-- Global network connectivity visualization -->
+        <div class="carousel-item absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-premium-gradient opacity-90"></div>
+        </div>
+
+        <div class="absolute inset-0 tech-pattern"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Global Technology
+                <span class="block bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                    Innovation Partners
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Transforming enterprises through cutting-edge AI, Blockchain, IoT, and cloud-native solutions. 
+                Proven expertise. Global reach. Uncompromising quality.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Start Your Transformation
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white hover:text-nokia-navy px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                    Explore Our Expertise
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="carousel-indicator active w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-30" data-slide="1"></button>
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-30" data-slide="2"></button>
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-30" data-slide="3"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-nokia-navy mb-6">
+                    Experienced. Global. <span class="text-blue-600">Results-Driven.</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    While NexaTech Global is newly established, our founding team brings decades of combined experience 
+                    in delivering complex, high-impact technology solutions for Fortune 500 companies worldwide.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Professional team in modern office environment -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Professional technology consulting team" class="rounded-2xl shadow-2xl">
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-globe text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-nokia-navy mb-2">Global Reach</h3>
+                            <p class="text-gray-600">Our international team has successfully delivered projects across North America, Europe, Asia, and emerging markets.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-rocket text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-nokia-navy mb-2">Innovation First</h3>
+                            <p class="text-gray-600">We don't just implement existing solutions—we pioneer new approaches that give our clients competitive advantages.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-nokia-navy mb-2">Enterprise Security</h3>
+                            <p class="text-gray-600">Every solution is built with security-first principles, ensuring compliance with global standards and regulations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-nokia-navy mb-6">
+                    Cutting-Edge <span class="text-blue-600">Technology Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From AI-powered automation to blockchain infrastructure, we deliver comprehensive technology solutions 
+                    that transform how your business operates and competes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI/ML Services -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Artificial intelligence brain with neural connections -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">AI & Machine Learning</h3>
+                        <p class="text-gray-600 mb-4">Custom AI models, predictive analytics, computer vision, and NLP solutions that automate processes and unlock insights.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Predictive maintenance systems</li>
+                            <li>• Intelligent document processing</li>
+                            <li>• Real-time decision engines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Blockchain Services -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Blockchain network with connected blocks -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-link text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">Blockchain Solutions</h3>
+                        <p class="text-gray-600 mb-4">Enterprise blockchain architecture, smart contracts, DeFi platforms, and tokenization strategies.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Supply chain transparency</li>
+                            <li>• Digital asset management</li>
+                            <li>• Decentralized applications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IoT Services -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- IoT devices and sensors in industrial setting -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-microchip text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">Internet of Things</h3>
+                        <p class="text-gray-600 mb-4">End-to-end IoT solutions from device design to cloud integration, enabling smart operations and data-driven insights.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Smart manufacturing systems</li>
+                            <li>• Environmental monitoring</li>
+                            <li>• Connected vehicle platforms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Custom Development -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Modern software development workspace -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-code text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">Custom Development</h3>
+                        <p class="text-gray-600 mb-4">Full-stack software development, mobile applications, firmware, and embedded systems tailored to your requirements.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Enterprise web applications</li>
+                            <li>• Mobile app development</li>
+                            <li>• API integration platforms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Infrastructure Services -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Cloud infrastructure and data center -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-server text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">IT Infrastructure</h3>
+                        <p class="text-gray-600 mb-4">Cloud-native architecture, network optimization, telecom infrastructure, and scalable system design.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Multi-cloud strategies</li>
+                            <li>• Network modernization</li>
+                            <li>• DevOps automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Services -->
+                <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Cybersecurity shield with network protection -->
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400');">
+                        <div class="service-overlay absolute inset-0 bg-service-gradient transition-all duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-nokia-navy mb-3">Cybersecurity</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive security frameworks, threat detection, compliance management, and risk assessment.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Zero-trust architecture</li>
+                            <li>• Penetration testing</li>
+                            <li>• Compliance automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-nokia-navy mb-6">
+                    Industries We <span class="text-blue-600">Transform</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our expertise spans across multiple sectors, delivering tailored solutions that address 
+                    industry-specific challenges and regulatory requirements.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-university text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Financial Services</h3>
+                    <p class="text-gray-600 text-sm">Digital banking, fraud detection, algorithmic trading</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heartbeat text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Healthcare</h3>
+                    <p class="text-gray-600 text-sm">Medical imaging AI, patient monitoring, telemedicine</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Manufacturing</h3>
+                    <p class="text-gray-600 text-sm">Smart factories, predictive maintenance, quality control</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-city text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Smart Cities</h3>
+                    <p class="text-gray-600 text-sm">Traffic optimization, energy management, public safety</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Energy & Utilities</h3>
+                    <p class="text-gray-600 text-sm">Grid optimization, renewable integration, demand forecasting</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Retail & E-commerce</h3>
+                    <p class="text-gray-600 text-sm">Personalization engines, inventory optimization, AR/VR</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Logistics</h3>
+                    <p class="text-gray-600 text-sm">Route optimization, fleet management, supply chain visibility</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-emerald-50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-nokia-navy mb-2">Defense & Security</h3>
+                    <p class="text-gray-600 text-sm">Threat intelligence, surveillance systems, secure communications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-premium-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Ready to <span class="text-emerald-400">Transform</span> Your Business?
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Let's discuss how our cutting-edge technology solutions can drive your organization forward. 
+                    Our experts are ready to tackle your most complex challenges.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Get Started Today</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:border-emerald-400 focus:outline-none transition-colors" data-mock="true">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:border-emerald-400 focus:outline-none transition-colors" data-mock="true">
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Company Name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:border-emerald-400 focus:outline-none transition-colors" data-mock="true">
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-emerald-400 focus:outline-none transition-colors" data-mock="true">
+                                <option value="">Select Service Interest</option>
+                                <option value="ai">AI & Machine Learning</option>
+                                <option value="blockchain">Blockchain Solutions</option>
+                                <option value="iot">Internet of Things</option>
+                                <option value="development">Custom Development</option>
+                                <option value="infrastructure">IT Infrastructure</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Tell us about your project or challenge..." class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:border-emerald-400 focus:outline-none transition-colors resize-none" data-mock="true"></textarea>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <input type="file" id="file-upload" class="hidden">
+                            <label for="file-upload" class="flex items-center space-x-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white cursor-pointer hover:bg-white/20 transition-colors">
+                                <i class="fas fa-paperclip"></i>
+                                <span>Attach NDA or Project Brief</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105" data-event="click:handleSubmit" data-implementation="Should validate form before submission">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-emerald-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Email</p>
+                                    <p class="text-white font-semibold">hello@nexatech-global.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-emerald-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">Phone</p>
+                                    <p class="text-white font-semibold">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-emerald-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-300">LinkedIn</p>
+                                    <p class="text-white font-semibold">linkedin.com/company/nexatech-global</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule Meeting -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                        <h4 class="text-xl font-semibold text-white mb-4">Schedule a Consultation</h4>
+                        <p class="text-gray-300 mb-4">
+                            Book a 30-minute strategy session with our technology experts to discuss your specific needs and challenges.
+                        </p>
+                        <button class="w-full bg-white text-nokia-navy py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" data-implementation="Should integrate with Calendly or similar scheduling service">
+                            Book Free Consultation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nokia-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cube text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">NexaTech Global</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Transforming enterprises through cutting-edge technology solutions. 
+                        Global expertise. Local partnership.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">AI & Machine Learning</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blockchain Solutions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Internet of Things</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Custom Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">IT Infrastructure</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Industries</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Financial Services</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Manufacturing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Smart Cities</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Energy & Utilities</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Defense & Security</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 NexaTech Global. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">GDPR Compliance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Carousel functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                indicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.add('active');
+                        indicator.style.opacity = '1';
+                    } else {
+                        indicator.classList.remove('active');
+                        indicator.style.opacity = '0.3';
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            // Auto-advance carousel
+            setInterval(nextSlide, 5000);
+
+            // Manual carousel control
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // TODO: Implement business logic for form submission, API calls, and state management
+            // TODO: Integrate with scheduling service like Calendly
+            // TODO: Add form validation and error handling
+            // TODO: Implement file upload functionality
+            // TODO: Add analytics tracking
+            // TODO: Implement mobile menu toggle
+        })();
+    </script>
+</body>
+</html>
