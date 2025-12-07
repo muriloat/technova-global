@@ -1,0 +1,688 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Technology Innovation Partners - AI, Blockchain & IoT Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0F172A',
+                        'charcoal': '#1E293B',
+                        'electric-blue': '#3B82F6',
+                        'metallic-silver': '#94A3B8'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.8s ease-out'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes glow {
+            from { box-shadow: 0 0 20px #3B82F6; }
+            to { box-shadow: 0 0 30px #3B82F6, 0 0 40px #3B82F6; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-carousel {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+        .tech-grid {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #3B82F6 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #3B82F6 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        .nav-link:hover {
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+        }
+    </style>
+</head>
+<body class="bg-navy text-white font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-navy/95 backdrop-blur-sm border-b border-charcoal z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                        GlobalTech Partners
+                    </h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-electric-blue transition-all duration-300">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-electric-blue transition-all duration-300">About</a>
+                        <a href="#services" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-electric-blue transition-all duration-300">Services</a>
+                        <a href="#industries" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-electric-blue transition-all duration-300">Industries</a>
+                        <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-electric-blue transition-all duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-metallic-silver hover:text-white">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="relative min-h-screen hero-carousel overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+        <!-- Global network visualization with Earth and connecting lines -->
+        <div class="absolute inset-0 bg-gradient-to-br from-navy/80 via-charcoal/60 to-navy/90"></div>
+        <div class="tech-grid absolute inset-0"></div>
+        
+        <div class="relative z-10 flex items-center min-h-screen">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in">
+                        <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                            <span class="bg-gradient-to-r from-white via-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                                Global Technology
+                            </span>
+                            <br>
+                            <span class="text-white">Innovation Partners</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-metallic-silver mb-8 leading-relaxed">
+                            Transforming businesses worldwide through cutting-edge AI, Blockchain, and IoT solutions. 
+                            Your trusted partner for advanced technology consulting.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-gradient-to-r from-electric-blue to-blue-600 hover:from-blue-600 hover:to-electric-blue text-white font-semibold py-4 px-8 transition-all duration-300 animate-glow">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Start Your Project
+                            </button>
+                            <button class="border-2 border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-white font-semibold py-4 px-8 transition-all duration-300">
+                                <i class="fas fa-calendar mr-2"></i>
+                                Schedule Consultation
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block animate-float">
+                        <!-- Abstract AI visualization with neural network patterns -->
+                        <img src="https://pixabay.com/get/g3cf197041237e0069106eaf9c8f6ee01f13574b6b0b1775e72151e26d672ae0df5a4f47b4360f4509444379321d1e3f8d609c6655fb174be10e700bec0589ad9_1280.jpg" 
+                             alt="Abstract AI and neural network visualization" 
+                             class="w-full h-auto shadow-2xl border border-electric-blue/20" />
+                    </div>
+                </div>
+                
+                <!-- Key Focus Areas -->
+                <div class="mt-20 grid grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="text-center p-4 bg-charcoal/50 backdrop-blur-sm border border-electric-blue/20 hover:border-electric-blue/50 transition-all duration-300">
+                        <i class="fas fa-brain text-3xl text-electric-blue mb-2"></i>
+                        <h3 class="font-semibold">Artificial Intelligence</h3>
+                    </div>
+                    <div class="text-center p-4 bg-charcoal/50 backdrop-blur-sm border border-electric-blue/20 hover:border-electric-blue/50 transition-all duration-300">
+                        <i class="fas fa-link text-3xl text-electric-blue mb-2"></i>
+                        <h3 class="font-semibold">Blockchain</h3>
+                    </div>
+                    <div class="text-center p-4 bg-charcoal/50 backdrop-blur-sm border border-electric-blue/20 hover:border-electric-blue/50 transition-all duration-300">
+                        <i class="fas fa-network-wired text-3xl text-electric-blue mb-2"></i>
+                        <h3 class="font-semibold">Internet of Things</h3>
+                    </div>
+                    <div class="text-center p-4 bg-charcoal/50 backdrop-blur-sm border border-electric-blue/20 hover:border-electric-blue/50 transition-all duration-300">
+                        <i class="fas fa-code text-3xl text-electric-blue mb-2"></i>
+                        <h3 class="font-semibold">Custom Development</h3>
+                    </div>
+                    <div class="text-center p-4 bg-charcoal/50 backdrop-blur-sm border border-electric-blue/20 hover:border-electric-blue/50 transition-all duration-300">
+                        <i class="fas fa-shield-alt text-3xl text-electric-blue mb-2"></i>
+                        <h3 class="font-semibold">Cybersecurity</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                        About GlobalTech Partners
+                    </span>
+                </h2>
+                <p class="text-xl text-metallic-silver max-w-3xl mx-auto">
+                    A newly established global consulting firm built by seasoned professionals with decades of experience 
+                    delivering transformative technology solutions across continents.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <!-- Professional team meeting in modern office -->
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Professional team meeting in modern office environment" 
+                         class="w-full h-auto shadow-2xl border border-electric-blue/20" />
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy/50 p-6 border border-electric-blue/20">
+                        <h3 class="text-2xl font-bold text-electric-blue mb-4">
+                            <i class="fas fa-globe mr-2"></i>
+                            Global Vision
+                        </h3>
+                        <p class="text-metallic-silver leading-relaxed">
+                            To be the world's premier technology consulting partner, bridging the gap between 
+                            cutting-edge innovation and practical business solutions across all industries and continents.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-navy/50 p-6 border border-electric-blue/20">
+                        <h3 class="text-2xl font-bold text-electric-blue mb-4">
+                            <i class="fas fa-trophy mr-2"></i>
+                            Proven Excellence
+                        </h3>
+                        <p class="text-metallic-silver leading-relaxed">
+                            Our founding team brings together 50+ years of combined experience from leading 
+                            Fortune 500 companies, delivering complex projects across North America, Europe, Asia, and beyond.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-navy/50 p-6 border border-electric-blue/20">
+                        <h3 class="text-2xl font-bold text-electric-blue mb-4">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Innovation First
+                        </h3>
+                        <p class="text-metallic-silver leading-relaxed">
+                            We don't just implement technology—we architect the future. Every solution is designed 
+                            with scalability, security, and sustainable growth at its core.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                        Our Services
+                    </span>
+                </h2>
+                <p class="text-xl text-metallic-silver max-w-3xl mx-auto">
+                    Comprehensive technology solutions designed to transform your business and drive sustainable growth.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI/ML Consulting -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- Abstract AI brain network visualization -->
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Abstract AI brain network and machine learning visualization" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI/ML Consulting & Development</h3>
+                    <p class="text-metallic-silver mb-6">
+                        Custom AI models, machine learning pipelines, and intelligent automation solutions. 
+                        From predictive analytics to natural language processing.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Custom ML Model Development</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>AI Strategy & Implementation</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Predictive Analytics</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Computer Vision Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- Blockchain Architecture -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- Blockchain network with connected nodes and data flow -->
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Blockchain network visualization with connected nodes and data flow" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Blockchain Architecture</h3>
+                    <p class="text-metallic-silver mb-6">
+                        Secure, scalable blockchain solutions for enterprise applications. 
+                        Smart contracts, DeFi platforms, and distributed ledger systems.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Enterprise Blockchain Solutions</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Smart Contract Development</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>DeFi Platform Architecture</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Cryptocurrency Integration</li>
+                    </ul>
+                </div>
+
+                <!-- IoT Solutions -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- IoT devices and sensors connected in smart environment -->
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="IoT devices and sensors connected in smart environment" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">IoT Device Design & Networks</h3>
+                    <p class="text-metallic-silver mb-6">
+                        End-to-end IoT solutions from device design to cloud integration. 
+                        Industrial IoT, smart cities, and connected product ecosystems.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Custom IoT Device Development</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Sensor Network Architecture</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Edge Computing Solutions</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Industrial IoT Systems</li>
+                    </ul>
+                </div>
+
+                <!-- Custom Software Development -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- Modern software development workspace with multiple screens -->
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Modern software development workspace with multiple screens and code" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Full-Stack Development</h3>
+                    <p class="text-metallic-silver mb-6">
+                        Custom software and firmware development across all platforms. 
+                        Web applications, mobile apps, and embedded systems programming.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Web & Mobile Applications</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Embedded Systems Programming</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>API Development & Integration</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Database Architecture</li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- Cloud infrastructure and server network visualization -->
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Cloud infrastructure and server network visualization" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">IT & Telecom Infrastructure</h3>
+                    <p class="text-metallic-silver mb-6">
+                        Scalable cloud-native architecture and network infrastructure solutions. 
+                        Enterprise-grade systems built for performance and reliability.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Cloud Architecture Design</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Network Infrastructure</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>DevOps & CI/CD Pipelines</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="service-card bg-charcoal p-8 border border-electric-blue/20 hover:border-electric-blue transition-all duration-500">
+                    <!-- Cybersecurity network protection with shield and data streams -->
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                         alt="Cybersecurity network protection with shield and data streams" 
+                         class="w-full h-48 object-cover mb-6 border border-electric-blue/20" />
+                    <div class="text-electric-blue text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Cybersecurity Solutions</h3>
+                    <p class="text-metallic-silver mb-6">
+                        Comprehensive security frameworks protecting your digital assets. 
+                        Threat assessment, penetration testing, and security architecture design.
+                    </p>
+                    <ul class="text-sm text-metallic-silver space-y-2">
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Security Architecture Design</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Penetration Testing</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Threat Assessment</li>
+                        <li><i class="fas fa-check text-electric-blue mr-2"></i>Compliance & Governance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-20 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                        Industries We Serve
+                    </span>
+                </h2>
+                <p class="text-xl text-metallic-silver max-w-3xl mx-auto">
+                    Delivering transformative technology solutions across diverse industry verticals worldwide.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-chart-line text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Financial Services</h3>
+                    <p class="text-metallic-silver text-sm">Banking, Insurance, Investment Management</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-heartbeat text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Healthcare</h3>
+                    <p class="text-metallic-silver text-sm">Digital Health, Medical Devices, Telemedicine</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-city text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Smart Cities</h3>
+                    <p class="text-metallic-silver text-sm">Urban Infrastructure, Transportation, Energy</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-industry text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Manufacturing</h3>
+                    <p class="text-metallic-silver text-sm">Industry 4.0, Automation, Supply Chain</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-shopping-cart text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Retail & E-commerce</h3>
+                    <p class="text-metallic-silver text-sm">Digital Commerce, Customer Experience</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-bolt text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Energy & Utilities</h3>
+                    <p class="text-metallic-silver text-sm">Smart Grid, Renewable Energy, IoT</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-shield text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Defense & Security</h3>
+                    <p class="text-metallic-silver text-sm">Cybersecurity, Communications, Intelligence</p>
+                </div>
+                
+                <div class="bg-navy/50 p-6 text-center border border-electric-blue/20 hover:border-electric-blue hover:bg-navy/70 transition-all duration-300">
+                    <i class="fas fa-graduation-cap text-4xl text-electric-blue mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Education</h3>
+                    <p class="text-metallic-silver text-sm">EdTech, Learning Management, Research</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent">
+                        Start Your Transformation
+                    </span>
+                </h2>
+                <p class="text-xl text-metallic-silver max-w-3xl mx-auto">
+                    Ready to unlock your organization's potential? Let's discuss how our expertise can drive your success.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <!-- Professional consultation meeting in modern office -->
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Professional consultation meeting in modern office" 
+                         class="w-full h-80 object-cover mb-8 border border-electric-blue/20" />
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-electric-blue/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-electric-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <p class="text-metallic-silver">contact@globaltechpartners.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-electric-blue/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-electric-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Phone</h3>
+                                <p class="text-metallic-silver">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-electric-blue/20 rounded-full flex items-center justify-center">
+                                <i class="fab fa-linkedin text-electric-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">LinkedIn</h3>
+                                <p class="text-metallic-silver">linkedin.com/company/globaltech-partners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal p-8 border border-electric-blue/20">
+                    <form class="space-y-6" data-implementation="Should validate form before submission">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Full Name</label>
+                                <input type="text" data-bind="form.name" class="w-full px-4 py-3 bg-navy border border-electric-blue/20 text-white focus:border-electric-blue focus:outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" data-bind="form.email" class="w-full px-4 py-3 bg-navy border border-electric-blue/20 text-white focus:border-electric-blue focus:outline-none transition-colors" placeholder="john@company.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Company</label>
+                            <input type="text" data-bind="form.company" class="w-full px-4 py-3 bg-navy border border-electric-blue/20 text-white focus:border-electric-blue focus:outline-none transition-colors" placeholder="Your Company">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Project Type</label>
+                            <select data-bind="form.projectType" class="w-full px-4 py-3 bg-navy border border-electric-blue/20 text-white focus:border-electric-blue focus:outline-none transition-colors">
+                                <option>Select Project Type</option>
+                                <option>AI/ML Development</option>
+                                <option>Blockchain Solutions</option>
+                                <option>IoT Implementation</option>
+                                <option>Custom Software Development</option>
+                                <option>Infrastructure & Security</option>
+                                <option>Technology Strategy Consulting</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea data-bind="form.message" rows="5" class="w-full px-4 py-3 bg-navy border border-electric-blue/20 text-white focus:border-electric-blue focus:outline-none transition-colors" placeholder="Tell us about your project requirements and goals..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Upload File (Optional)</label>
+                            <div class="border-2 border-dashed border-electric-blue/30 p-6 text-center bg-navy/50">
+                                <i class="fas fa-cloud-upload-alt text-3xl text-electric-blue mb-2"></i>
+                                <p class="text-metallic-silver">Drop files here or click to upload</p>
+                                <p class="text-sm text-metallic-silver/60">PDF, DOC, or image files up to 10MB</p>
+                                <input type="file" class="hidden" accept=".pdf,.doc,.docx,.jpg,.png" data-implementation="Use FileUpload component here">
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" class="mr-3 text-electric-blue focus:ring-electric-blue">
+                            <label class="text-sm text-metallic-silver">
+                                I agree to sign an NDA if required for project discussions
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-electric-blue to-blue-600 hover:from-blue-600 hover:to-electric-blue text-white font-semibold py-4 px-8 transition-all duration-300" data-event="click:handleSubmit">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal border-t border-electric-blue/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold bg-gradient-to-r from-electric-blue to-metallic-silver bg-clip-text text-transparent mb-4">
+                        GlobalTech Partners
+                    </h3>
+                    <p class="text-metallic-silver text-sm leading-relaxed">
+                        Transforming businesses worldwide through cutting-edge technology solutions. 
+                        Your trusted partner for AI, Blockchain, IoT, and beyond.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-metallic-silver">
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">AI/ML Development</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Blockchain Solutions</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">IoT Implementation</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Custom Development</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Industries</h4>
+                    <ul class="space-y-2 text-sm text-metallic-silver">
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Financial Services</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Healthcare</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Smart Cities</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Manufacturing</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Retail & E-commerce</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-electric-blue/20 rounded-full flex items-center justify-center hover:bg-electric-blue hover:text-white transition-all">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-electric-blue/20 rounded-full flex items-center justify-center hover:bg-electric-blue hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-electric-blue/20 rounded-full flex items-center justify-center hover:bg-electric-blue hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="text-sm text-metallic-silver space-y-1">
+                        <a href="#" class="block hover:text-electric-blue transition-colors">Privacy Policy</a>
+                        <a href="#" class="block hover:text-electric-blue transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-electric-blue/20 mt-8 pt-8 text-center text-sm text-metallic-silver">
+                <p>&copy; 2024 GlobalTech Partners. All rights reserved. | GDPR Compliant | ISO 27001 Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Hero carousel functionality
+            const heroImages = [
+                'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080',
+                'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080',
+                'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080',
+                'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'
+            ];
+            
+            let currentImageIndex = 0;
+            const heroSection = document.querySelector('.hero-carousel');
+            
+            function rotateHeroImage() {
+                currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+                heroSection.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+            }
+            
+            // Rotate hero image every 8 seconds
+            setInterval(rotateHeroImage, 8000);
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Form validation placeholder
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission
+                    console.log('Form submission prevented - implement validation logic');
+                });
+            }
+            
+            // File upload placeholder
+            const fileInput = document.querySelector('input[type="file"]');
+            const uploadArea = document.querySelector('.border-dashed');
+            
+            if (uploadArea && fileInput) {
+                uploadArea.addEventListener('click', () => fileInput.click());
+                
+                uploadArea.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('border-electric-blue');
+                });
+                
+                uploadArea.addEventListener('dragleave', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('border-electric-blue');
+                });
+                
+                uploadArea.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('border-electric-blue');
+                    // TODO: Handle file drop logic
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
